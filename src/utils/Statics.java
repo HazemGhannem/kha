@@ -11,6 +11,6 @@ package utils;
 public class Statics {
 
     public static final String BASE_URL = "http://127.0.0.1:8000/";
-    public static final String URL_UPLOAD = "http://localhost:80/imageServer.php";
-    public static final String URL_REP_IMAGES = "http://localhost:80/images/";
+    public static final String URL_UPLOAD = "http://127.0.0.1:8000/imageServer.php";
+    public static final String URL_REP_IMAGES = "http://127.0.0.1:8000/images/";
 }

@@ -44,12 +44,13 @@ public class ServiceResto {
 
     public boolean addResto(Restaurant restaurant) {
         String url = Statics.BASE_URL + "api/restaurant/add";
+        System.out.println(url);
         req.setUrl(url);
         req.setPost(false);
-        req.addArgument("nomResto", restaurant.getNomResto());
-        req.addArgument("adresseResto", restaurant.getAdresseResto());
+        req.addArgument("nom", restaurant.getNomResto());
+        req.addArgument("adresse", restaurant.getAdresseResto());
         req.addArgument("specialite", restaurant.getSpecialite());
-        req.addArgument("telResto", restaurant.getTelResto() + " ");
+        req.addArgument("telephone", "" + restaurant.getTelResto());
 
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

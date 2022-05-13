@@ -16,39 +16,39 @@ import com.codename1.ui.layouts.BoxLayout;
 import entites.Restaurant;
 import services.ServiceResto;
 
-
-
 /**
  *
  * @author USER
  */
-public class AddResto extends Form{
+public class AddResto extends Form {
 
     public AddResto(Form previous) {
         setTitle("Ajouter Restaurant");
         setLayout(BoxLayout.y());
-        TextField tfNomResto = new TextField("","Nom Restaurant ");
-       // CheckBox cbSpecialite = new CheckBox("Specialite");
-        TextField tfAdresseResto = new TextField("","Adresse Restaurant");
-        TextField tfSpecialite = new TextField("","Restaurant Specialite");
-        TextField tfTelResto = new TextField("","Numero Telephone");
+        TextField tfNomResto = new TextField("", "Nom Restaurant ");
+        // CheckBox cbSpecialite = new CheckBox("Specialite");
+        TextField tfAdresseResto = new TextField("", "Adresse Restaurant");
+        TextField tfSpecialite = new TextField("", "Restaurant Specialite");
+        TextField tfTelResto = new TextField("", "Numero Telephone");
         Button btnAdd = new Button("Ajouter");
         btnAdd.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent evt) {  
-                
-            Restaurant restaurant = new Restaurant(Integer.parseInt(tfTelResto.getText()), tfNomResto.getText(),tfSpecialite.getText(), tfAdresseResto.getText());
-            if(ServiceResto.getInstance().addResto(restaurant)){
-                Dialog.show("Success","Restaurant Ajouté", "OK", null);
-            }else{
-                Dialog.show("Error","Request Error","OK",null);
-            }
-            
+            public void actionPerformed(ActionEvent evt) {
+
+                Restaurant restaurant = new Restaurant(Integer.parseInt(tfTelResto.getText()), tfNomResto.getText(), tfSpecialite.getText(), tfAdresseResto.getText());
+                System.out.println(restaurant);
+                if (ServiceResto.getInstance().addResto(restaurant)) {
+                    Dialog.show("Success", "Restaurant Ajouté", "OK", null);
+                } else {
+                    Dialog.show("Error", "Request Error", "OK", null);
+                }
+
             }
         });
-        getToolbar().addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK,(evt) -> { previous.showBack(); });
-        addAll(tfNomResto,tfSpecialite,tfAdresseResto,tfTelResto,btnAdd);
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, (evt) -> {
+            previous.showBack();
+        });
+        addAll(tfNomResto, tfSpecialite, tfAdresseResto, tfTelResto, btnAdd);
     }
-    
-    
+
 }

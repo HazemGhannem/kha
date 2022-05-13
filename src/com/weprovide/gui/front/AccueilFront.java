@@ -14,12 +14,12 @@ public class AccueilFront extends Form {
 
     public AccueilFront() {
         super("Menu", new BoxLayout(BoxLayout.Y_AXIS));
-        addGUIs();
+        // addGUIs();
     }
 
     private void addGUIs() {
-        ImageViewer userImage = new ImageViewer(theme.getImage("default.jpg").fill(200, 200));
-        userImage.setUIID("candidatImage");
+        //ImageViewer userImage = new ImageViewer(theme.getImage("default.jpg").fill(200, 200));
+        // userImage.setUIID("candidatImage");
         label = new Label("Front");
         label.setUIID("links");
         Button btnDeconnexion = new Button();
@@ -31,7 +31,7 @@ public class AccueilFront extends Form {
 
         Container userContainer = new Container(new BorderLayout());
         userContainer.setUIID("userContainer");
-        userContainer.add(BorderLayout.WEST, userImage);
+        // userContainer.add(BorderLayout.WEST, userImage);
         userContainer.add(BorderLayout.CENTER, label);
         userContainer.add(BorderLayout.EAST, btnDeconnexion);
 
